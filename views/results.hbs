@@ -1,0 +1,29 @@
+{{#if hasContent}}
+    {{#each articles}}
+        <div class="row mt-3">
+            <div class="col">
+                <h2>{{this.title}}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="{{this.img}}" alt="Article's image" class="sizing">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col summary">
+                {{this.summary}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{this.published}}
+            </div>
+            <div class="col">
+                <a href="{{this.link}}">Read</a>
+            </div>
+        </div>
+    {{/each}}
+{{else}}
+    <h3>There are no news articles about "{{search}}". Click <a href="/">here</a> to search again.</h3>
+{{/if}}
